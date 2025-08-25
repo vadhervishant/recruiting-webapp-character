@@ -8,11 +8,11 @@ export const useSkillChecks = () => {
   const performSkillCheck = useCallback((character: Character, skill: string, dc: number) => {
     const skillData = character.skills.find(s => s.name === skill);
     if (!skillData) {
-      return; // Skill not found
+      return; 
     }
 
     const modifier = calculateModifier(character.attributes[skillData.attributeModifier]);
-    const roll = Math.floor(Math.random() * 20) + 1; // Roll d20
+    const roll = Math.floor(Math.random() * 20) + 1; 
     const total = roll + modifier + skillData.points;
     const success = total >= dc;
 
