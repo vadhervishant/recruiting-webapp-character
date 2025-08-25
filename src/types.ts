@@ -22,3 +22,24 @@ export interface Character {
   attributes: Attributes;
   skills: Skill[];
 }
+
+export interface SkillCheck {
+  skill: string;
+  dc: number;
+  roll?: number;
+  success?: boolean;
+  total?: number;
+  modifier?: number;
+  skillPoints?: number;
+}
+
+export interface PartySkillCheckResult {
+  skill: string;
+  dc: number;
+  roll: number;
+  success: boolean;
+  selectedCharacter: Character;
+  total: number;
+  modifier: number;
+  skillPoints: number;
+}
